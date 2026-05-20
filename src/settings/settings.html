@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FastOpen - 配置</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="app">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="shortcuts">快捷方式</button>
+      <button class="tab-btn" data-tab="appearance">外观设置</button>
+    </div>
+
+    <div id="tab-shortcuts" class="tab-content active">
+      <div class="header">
+        <h1>快捷方式管理</h1>
+        <div class="header-actions">
+          <button id="btn-add" class="btn btn-primary">添加应用</button>
+        </div>
+      </div>
+
+      <div id="drop-zone" class="drop-zone">
+        <div class="drop-zone-content">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <p>拖拽 .exe 或 .lnk 文件到此处添加</p>
+        </div>
+      </div>
+
+      <div id="shortcut-list" class="shortcut-list">
+      </div>
+
+      <div id="empty-state" class="empty-state">
+        <p>暂无快捷方式，点击上方按钮或拖拽文件添加</p>
+      </div>
+    </div>
+
+    <div id="tab-appearance" class="tab-content">
+      <div class="settings-section">
+        <h2 class="section-title">悬浮球样式</h2>
+        <div class="setting-row">
+          <label class="setting-label">样式类型</label>
+          <select id="ball-style" class="setting-select">
+            <option value="default">默认（闪电图标）</option>
+            <option value="image">自定义图片 / GIF</option>
+            <option value="clock">模拟时钟</option>
+          </select>
+        </div>
+
+        <div id="image-settings" class="sub-settings" style="display:none">
+          <div class="setting-row">
+            <label class="setting-label">选择图片</label>
+            <div class="setting-row-inline">
+              <button id="btn-select-image" class="btn btn-primary btn-sm">选择图片</button>
+              <button id="btn-clear-image" class="btn btn-ghost btn-sm">清除</button>
+            </div>
+          </div>
+          <div id="image-preview-wrap" class="image-preview-wrap" style="display:none">
+            <img id="image-preview" class="image-preview" />
+          </div>
+        </div>
+
+        <div id="clock-settings" class="sub-settings" style="display:none">
+          <div class="setting-row">
+            <label class="setting-label">表盘颜色</label>
+            <input type="color" id="clock-face-color" class="setting-color" value="#1e78dc" />
+          </div>
+          <div class="setting-row">
+            <label class="setting-label">时针/分针颜色</label>
+            <input type="color" id="clock-hand-color" class="setting-color" value="#ffffff" />
+          </div>
+          <div class="setting-row">
+            <label class="setting-label">秒针颜色</label>
+            <input type="color" id="clock-second-color" class="setting-color" value="#ff4444" />
+          </div>
+          <div class="setting-row">
+            <label class="setting-label">刻度颜色</label>
+            <input type="color" id="clock-tick-color" class="setting-color" value="#999999" />
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h2 class="section-title">圆环线条</h2>
+        <div class="setting-row">
+          <label class="setting-label">线条颜色</label>
+          <input type="color" id="ring-line-color" class="setting-color" value="#1e78dc" />
+        </div>
+        <div class="setting-row">
+          <label class="setting-label">线条透明度</label>
+          <div class="setting-row-inline">
+            <input type="range" id="ring-line-opacity" class="setting-range" min="0" max="100" value="18" />
+            <span id="ring-line-opacity-val" class="range-val">18%</span>
+          </div>
+        </div>
+        <div class="setting-row">
+          <label class="setting-label">线条宽度</label>
+          <div class="setting-row-inline">
+            <input type="range" id="ring-line-width" class="setting-range" min="1" max="5" value="1" step="0.5" />
+            <span id="ring-line-width-val" class="range-val">1px</span>
+          </div>
+        </div>
+        <div class="setting-row">
+          <label class="setting-label">线条样式</label>
+          <select id="ring-line-style" class="setting-select">
+            <option value="solid">实线</option>
+            <option value="dashed">虚线</option>
+            <option value="dotted">点线</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="file-picker" accept=".exe,.lnk" style="display:none" />
+
+  <script src="settings.js"></script>
+</body>
+</html>

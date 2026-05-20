@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FastOpen</title>
+  <link rel="stylesheet" href="floating.css">
+</head>
+<body>
+  <div id="container">
+    <div id="ball" class="ball-normal">
+      <svg id="ball-default-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+      </svg>
+      <img id="ball-custom-image" style="display:none" draggable="false" />
+      <canvas id="ball-clock-canvas" width="56" height="56" style="display:none"></canvas>
+    </div>
+    <div id="fan-panel" class="fan-hidden">
+    </div>
+    <div id="tooltip" class="tooltip-hidden"></div>
+  </div>
+  <script src="floating.js"></script>
+</body>
+</html>

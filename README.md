@@ -1,8 +1,8 @@
 # FastOpen - 桌面悬浮快捷启动工具
 
 一款轻量级 Windows 桌面悬浮球应用，让你一键快速启动和切换常用程序。
-![展示](image.png)!
-![展示2](image-1.png)!
+![展示](image.png)
+![展示2](image-1.png)
 ![展示3](image-3.png)
 
 ## 功能特性
